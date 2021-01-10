@@ -3890,4 +3890,47 @@ const serverData =  [
     }
 ]
 
-export default serverData;
+const ramOptions = [
+    { label: '2GB', value: '2GB' },
+    { label: '4GB', value: '4GB' },
+    { label: '8GB', value: '8GB' },
+    { label: '12GB', value: '12GB' },
+    { label: '16GB', value: '16GB' },
+    { label: '24GB', value: '24GB' },
+    { label: '32GB', value: '32GB' },
+    { label: '48GB', value: '48GB' },
+    { label: '64GB', value: '64GB' },
+    { label: '96GB', value: '96GB' },
+  ];
+
+  const marks = {
+      0: "0",
+      1: "250GB",
+      2: "500GB",
+      3: "1TB",
+      4: "2TB",
+      5: "3TB",
+      6: "4TB",
+      7: "8TB",
+      8: "12TB",
+      9: "24TB",
+      10: "48TB",
+      11: "72TB"
+  }
+
+  const marksToGbMapping = {
+    0: 0,
+    1: 250,
+    2: 500,
+    3: 1000,
+    4: 2000,
+    5: 3000,
+    6: 4000,
+    7: 8000,
+    8: 12000,
+    9: 24000,
+    10: 48000,
+    11: 72000
+}
+
+export  {serverData ,marks, ramOptions, marksToGbMapping};

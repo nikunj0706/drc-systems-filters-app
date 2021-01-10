@@ -6,14 +6,15 @@ const TableContainer = (props) => {
     console.log("server data:::", filteredServerData);
     return (
         <div className="table-container">
+         {
+           filteredServerData && filteredServerData.length > 0 ?
+           <h3>Total Records - {filteredServerData.length}   </h3> :
+           <h3>No Records Found </h3>
+        }
        
         <table>
         
-        {
-           filteredServerData && filteredServerData.length > 0 ?
-           <caption>Total Records - {filteredServerData.length}   </caption> :
-           <caption>No Records Found  </caption>
-        }
+       
       
             <tr>
                 <th>Model</th>

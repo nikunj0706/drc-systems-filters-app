@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import serverData from "../../data/serverData";
+import { marksToGbMapping, serverData } from "../../data/serverData";
 import TableContainer from "./tableContainer.js";
 import AllFilters from "./allFilters"
 
@@ -10,20 +10,7 @@ serverData.forEach((obj) => {
     }
 })
 
-const gbMapping = {
-    0: 0,
-    1: 250,
-    2: 500,
-    3: 1000,
-    4: 2000,
-    5: 3000,
-    6: 4000,
-    7: 8000,
-    8: 12000,
-    9: 24000,
-    10: 48000,
-    11: 72000
-}
+
 const ServerFilters = () => {
    
 
@@ -34,7 +21,6 @@ const ServerFilters = () => {
     const [currentRange, setCurrentRange] = useState(0);
 
     useEffect(() => {
-        console.log("value:::", currentRange);
         const data = serverData.filter((obj) => obj.hdd.includes(currentHDDType));
 
         const locationFilter = data.filter((obj) => obj.location.includes(currentLocation));
@@ -75,7 +61,7 @@ const ServerFilters = () => {
                     currentStorage = muliplicationNo1 * muliplicationNo2;
                 }
                
-                if(currentStorage <= gbMapping[currentRange]) {
+                if(currentStorage <= marksToGbMapping[currentRange]) {
                     rangeFilterList.push(obj);
                 }
             })
